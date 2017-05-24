@@ -1,0 +1,10 @@
+   [{"position":{"lat":45.32788243895866,"lng":14.440112113952638},"title":"gray","description":"RIJEKA SAMPION","color":"#3bb2d0","icon":"monument"},
+  {"position":{"lat":45.330718496256445,"lng":14.446506500244142},"title":"Ivan Prezime","description":"NAPREED ","color":"#f1f075","icon":"bicycle"}, 
+ {"position":{"lat":45.32730917608238,"lng":14.454703330993654},"title":"Ime Matic","description":"REAL MADRID\n","color":"#ff8888","icon":"hospital"}, 
+ {"position":{"lat":45.329179801940185,"lng":14.45680618286133},"title":"Prezime Pa Ime","description":"REAL MADRID\n","color":"#e55e5e","icon":"fuel"}, 
+ {"position":{"lat":45.328516038545764,"lng":14.445605278015138},"title":"VANJA IVKOVIC","description":"REAL MADRID\n","color":"#c091e6","icon":"harbor"}, 
+ {"position":{"lat":45.32960219277765,"lng":14.450626373291017},"title":"VANJA IVKOVIC","description":"REAL MADRID\n","color":"#222b30","icon":"basketball"}, 
+ {"position":{"lat":45.326705735208044,"lng":14.451355934143068},"title":"VANJA IVKOVIC","description":"REAL MADRID\n","color":"#fa946e","icon":"airport"}, 
+ {"position":{"lat":45.3309699127698,"lng":14.441871643066408},"title":"VANJA IVKOVIC","description":"REAL MADRID\n","color":"#56b881","icon":"ice-cream"}, 
+ {"position":{"lat":45.33009497795339,"lng":14.437365531921388},"title":"VANJA IVKOVIC","description":"REAL MADRID\n","color":"#ed6498","icon":"rocket"}, 
+ {"position":{"lat":45.32864678028214,"lng":14.437665939331056},"title":"VANJA IVKOVIC","description":"REAL MADRID\n","color":"#fff","icon":"park2"} ]
