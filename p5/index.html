@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Animate a marker along line</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v3.1.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.1.0/mapbox.css' rel='stylesheet' />
+
+<style>
+.modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+
+  .w3-btn {width:150px;}
+  #map { position:center; height: 400px; bottom:0; width:50%; }
+  #ui-table {
+    background:#fff;
+    position:absolute;
+    top:10px;
+    right:10px;
+    z-index:100
+    }
+    .custom-restricted-width {
+    /* To limit the menu width to the content of the menu: */
+    display: inline-block;
+    /* Or set the width explicitly: */
+    /* width: 10em; */
+}
+</style>
+</head>
+<body onload = "loadLocalStorage()">
+
+
+<div id='table' class='ui-table'></div>
+<div id='map'>mapabox</div>
+<div id='output' class='ui-control'>
+  Mouse movement: <code  id="mousemove"></code><br>
+</div>
+<button onclick="saveMarkers()" class="w3-button w3-black w3-round-large">SAVE MARKERS</button>
+<button onclick="deleteMarkers()" class="w3-button w3-black w3-round-large"> DELETE MARKERS</button>
+<button onclick="hideOtherMarkers()" class="w3-tag w3-xlarge w3-padding w3-red" id="modalShow" style="transform:rotate(-5deg)">
+SHOW ONLY MY MARKERS
+</button>
+<div class="col-lg-3"><span class="success-icon"> </span>greater than or equal to 75%</div>
+<div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="naslov"><span></span>Marker User</h4>
+
+          <h6><span ></span>Marker title</h6>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span ></span>Marker description</label>
+              <input type="text" class="form-control" id="title" placeholder="Enter text">
+              <input checked data-toggle="toggle" id="privat" data-width="100" data-on="PRIVATE" data-off="OFF"type="checkbox">
+
+            </div>
+
+            <div class="btn-group">
+                        <button type="button" class="btn btn-primary" value=1 style="background-color: #e55e5e"></button>
+                        <button type="button" class="btn btn-primary" value=2 style="background-color: #3bb2d0"></button>
+                        <button type="button" class="btn btn-primary" value=3 style="background-color: #ed6498"></button>
+                        <button type="button" class="btn btn-primary" value=4 style="background-color: #c091e6"></button>
+                        <button type="button" class="btn btn-primary" value=5 style="background-color: #56b881"></button>
+                        <button type="button" class="btn btn-primary" value=6 style="background-color: #fff"></button>
+                        <button type="button" class="btn btn-primary" value=7 style="background-color: #fa946e"></button>
+                        <button type="button" class="btn btn-primary" value=8 style="background-color: #f1f075"></button>
+                        <button type="button" class="btn btn-primary" value=9 style="background-color: #222b30"></button>
+          </div>
+            <div class="form-group">
+              <form>
+              <label for="psw"></span>Tell us about it
+              <span class="glyphicon glyphicon-comment"></label>
+              <textarea type="text" rows="5" class="form-control" id="description" placeholder="Enter description"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+
+          <button type="submit" class="btn btn-success btn-block" id="buttonSave" data-dismiss="modal"><span class="glyphicon glyphicon-saved"></span> Save</button>
+          <button type="submit" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-off"></span> Cancel</button>
+            </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="bootstrap-iconpicker/js/iconset/iconset-all.min.js"></script>
+<script type="text/javascript" src="bootstrap-iconpicker/js/bootstrap-iconpicker.js"></script>
+
+
+<link href='https://cdnjs.cloudflare.com/ajax/libs/jquery-handsontable/0.10.2/jquery.handsontable.full.min.css' rel='stylesheet' />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-handsontable/0.10.2/jquery.handsontable.full.min.js'></script>
+<script src="mapBoxNew.js"></script>
+
+</body>
+</html>

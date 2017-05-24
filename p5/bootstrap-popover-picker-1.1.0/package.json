@@ -1,0 +1,35 @@
+{
+    "name": "bootstrap-popover-picker",
+    "version": "1.1.0",
+    "description": "Generic jQuery plugin template for building pickers with Bootstrap popovers",
+    "homepage": "https://itsjavi.com/bootstrap-popover-picker/",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:itsjavi/bootstrap-popover-picker.git"
+    },
+    "bugs": {
+        "url": "https://github.com/itsjavi/bootstrap-popover-picker/issues"
+    },
+    "keywords": [
+        "bootstrap",
+        "fontawesome",
+        "iconpicker",
+        "popover",
+        "picker"
+    ],
+    "author": "Javi Aguilar",
+    "licenses": [{
+            "type": "MIT",
+            "url": "https://github.com/itsjavi/bootstrap-popover-picker/blob/master/LICENSE"
+        }],
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-contrib-clean": "~0.5.0",
+        "grunt-contrib-jshint": "~0.10.0",
+        "grunt-contrib-less": "~0.11.2",
+        "grunt-contrib-uglify": "~0.5.0",
+        "grunt-contrib-concat": "~0.4.0",
+        "grunt-jsbeautifier": "~0.2.7",
+        "grunt-contrib-watch": "~0.6.1"
+    }
+}

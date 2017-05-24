@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap Popover Picker for Twitter Bootstrap 3</title>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link href="dist/css/bootstrap-picker.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <style>
+            footer{
+                font-style: italic;
+                background:#f7f7f7;
+                padding:60px;
+                text-align: center;
+                margin-top: 60px;
+            }
+            pre{
+                text-align: left;
+            }
+            .form-control, .form-group{
+                position: relative;
+            }
+            p.lead{
+                max-width: 600px;
+                margin:0 auto 20px auto;
+            }
+            div.lead{
+                margin:30px 0;
+            }
+            a.action-placement{
+                margin:0 4px 4px 4px;
+                display:inline-block;
+                /*border-bottom: 1px dotted #428BCA;*/
+                text-decoration: none;
+            }
+            a.action-placement.active{
+                color:#5CB85C;
+            }
+            .form-group{
+                text-align: left;
+                margin-bottom: 30px;
+            }
+            .form-group label{
+                display:block;
+                margin-bottom: 15px;
+            }
+            .lead iframe{
+                vertical-align: middle;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container" style="text-align: center">
+            <h1 class="page-header">Bootstrap Popover Picker</h1>
+            <p class="lead">
+                Generic jQuery plugin template for building pickers using Bootstrap popovers,
+                fully customizable with a powerful base API.
+            </p>
+            <div class="lead">
+
+                <a class="btn btn-warning" href="https://github.com/itsjavi/bootstrap-popover-picker">
+                    <i class="fa-github-alt fa"></i> Source Code
+                </a>
+
+                <a class="btn btn-primary" href="https://github.com/itsjavi/bootstrap-popover-picker/releases">
+                    <i class="fa-download fa"></i> Download
+                </a>
+            </div>
+            <p class="lead">
+                Looking for a <a href="https://itsjavi.com/fontawesome-iconpicker/">Font Awesome Icon Picker?</a>
+            </p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Demos</h2>
+                </div>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>Default</label>
+                                <input data-hide-on-select="true" class="form-control pck pck-auto" value="A" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label>As a component</label>
+
+                                <div class="input-group">
+                                    <input data-hide-on-select="true" class="form-control pck pck-auto" value="B" type="text" />
+                                    <span class="input-group-addon"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-title="Inline picker" data-placement="inline" class="pck pck-auto" data-selected="C">
+                                    Inline mode, without input: 
+                                </label> 
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label>With custom options</label>
+                                <input class="form-control pck pck-opts" value="" type="text" />
+                            </div>
+                            <pre class="well">
+$('.pck-opts').picker({
+    title: 'With custom options',
+    items: [
+        { type: 'heart', icon: '♥' }, { type: 'spades', icon: '♠' },
+        { type: 'clubs', icon: '♣' }, { type: 'diamonds', icon: '♦' },
+        { type: 'star', icon: '★' }, { type: 'smile', icon: '☺' },
+        { type: 'sun', icon: '☼' }, {type: 'song', icon: '♫' },
+    ],
+    itemProperty: 'icon',
+    selectedCustomClass: 'label label-success',
+    mustAccept:true,
+    placement:'bottomRight',
+    showFooter:true,
+    templates{
+        search:false,
+        //... (see the source code of this page)
+    }
+});</pre>
+                            <div class="form-group">
+                                <label>Inside dropdowns</label>
+                                <div class="btn-group">
+                                    <button type="button" class="pck pck-dd btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        Dropdown
+                                        <span class="caret"></span>
+                                    </button>
+                                    <div class="dropdown-menu"></div>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Action</button>
+                                    <button type="button" class="pck pck-dd btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu"></div>
+                                </div>
+                                <p class="help-block"><br>
+                                    Note: In dropdowns the placement is controlled by the Bootstrap dropdown plugin
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>As a component with custom options</label>
+
+                                <div class="input-group">
+                                    <input data-hide-on-select="true" class="form-control picker-data" value="Tuesday" type="text" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-secondary btn-success"><i class="fa fa-calendar"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <pre>
+$('.picker-data').picker({
+    title: "Choose a day of week",
+    items: [ "Sunday", "Monday", "Tuesday",
+             "Wednesday", "Thursday",
+              "Friday", "Saturday"],
+    placement: 'topRight',
+    updateComponentOnChange: false,
+    selectedCustomClass: 'btn-success demo-selected',
+    pickerItemClass: "demo-item-class",
+    component: '.input-group-btn',
+    itemValueSelector: 'span',
+    templates: {
+        pickerItem: '&lt;div class="demo-item-class">
+                        &lt;span>&lt;/span>
+                     &lt;/div>',
+    }
+});
+                            </pre>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-danger action-destroy">Destroy instances</button>
+                    <button class="btn btn-default action-create">Create instances</button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            created by <a href="https://itsjavi.com" target="_blank">Javi Aguilar</a>
+        </footer>
+        <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="dist/js/bootstrap-picker.js"></script>
+        <script>
+            $(function() {
+                $('.action-destroy').on('click', function() {
+                    $.picker.batch('.picker-element', 'destroy');
+                });
+                // Live binding of buttons
+                $(document).on('click', '.action-placement', function(e) {
+                    $('.action-placement').removeClass('active');
+                    $(this).addClass('active');
+                    $('.pck-opts').data('picker').updatePlacement($(this).text());
+                    e.preventDefault();
+                    return false;
+                });
+                $('.action-create').on('click', function() {
+                    $('.pck-auto').picker();
+                    $('.pck-dd').each(function() {
+                        var $this = $(this);
+                        $this.picker({
+                            title: 'Dropdown with picker',
+                            container: $(' ~ .dropdown-menu:first', $this),
+                        });
+                    });
+                    $('.pck-opts').picker({
+                        title: 'With custom options',
+                        items: [
+                            { type: 'heart', icon: '♥' }, { type: 'spades', icon: '♠' },
+                            { type: 'clubs', icon: '♣' }, { type: 'diamonds', icon: '♦' },
+                            { type: 'star', icon: '★' }, { type: 'smile', icon: '☺' },
+                            { type: 'sun', icon: '☼' }, {type: 'song', icon: '♫' }
+                        ],
+                        itemProperty: 'icon',
+                        selectedCustomClass: 'label label-success',
+                        mustAccept: true,
+                        placement: 'bottomRight',
+                        showFooter: true,
+                        // note that this is ignored cause we have an accept button:
+                        hideOnSelect: true,
+                        templates: {
+                            search: false,
+                            footer: '<div class="popover-footer">' +
+                                    '<div style="text-align:left; font-size:12px;">Placements: \n\
+                    <a href="#" class=" action-placement">inline</a>\n\
+                    <a href="#" class=" action-placement">topLeftCorner</a>\n\
+                    <a href="#" class=" action-placement">topLeft</a>\n\
+                    <a href="#" class=" action-placement">top</a>\n\
+                    <a href="#" class=" action-placement">topRight</a>\n\
+                    <a href="#" class=" action-placement">topRightCorner</a>\n\
+                    <a href="#" class=" action-placement">rightTop</a>\n\
+                    <a href="#" class=" action-placement">right</a>\n\
+                    <a href="#" class=" action-placement">rightBottom</a>\n\
+                    <a href="#" class=" action-placement">bottomRightCorner</a>\n\
+                    <a href="#" class=" active action-placement">bottomRight</a>\n\
+                    <a href="#" class=" action-placement">bottom</a>\n\
+                    <a href="#" class=" action-placement">bottomLeft</a>\n\
+                    <a href="#" class=" action-placement">bottomLeftCorner</a>\n\
+                    <a href="#" class=" action-placement">leftBottom</a>\n\
+                    <a href="#" class=" action-placement">left</a>\n\
+                    <a href="#" class=" action-placement">leftTop</a>\n\
+                    </div><hr></div>'}
+                    }).data('picker').show();
+
+                    $('.picker-data').picker({
+                        title: "Choose a day of week",
+                        items: [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                        placement: 'topRight',
+                        updateComponentOnChange: false,
+                        selectedCustomClass: 'btn-success demo-selected',
+                        pickerItemClass: "demo-item-class", //see style.css file
+                        component: '.input-group-btn',
+                        itemValueSelector: 'span',
+                        templates: {
+                            pickerItem: '<div class="demo-item-class"><span></span></div>',
+                        }
+                    });
+
+                }).trigger('click');
+            });
+        </script>
+    </body>
+
+</html>

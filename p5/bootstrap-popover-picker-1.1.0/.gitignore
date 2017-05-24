@@ -1,0 +1,13 @@
+*~
+.DS_Store
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+*.log
+/ignore/
+/ignored/
+/node_modules/
+/nbproject/
+bower_components
+static_server.js
+*.php

@@ -1,0 +1,23 @@
+{
+  "name": "bootstrap-popover-picker",
+  "dependencies": {
+    "jquery": ">=1.10",
+    "bootstrap": ">=2"
+  },
+  "ignore": [
+    "\\.*",
+    "/src",
+    "index.html",
+    "/package.json",
+    "/Gruntfile.js",
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "homepage": "https://github.com/itsjavi/bootstrap-popover-picker",
+  "authors": [
+    "Javier Aguilar"
+  ],
+  "description": "bootstrap-popover-picker",
+  "license": "MIT"
+}

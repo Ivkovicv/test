@@ -6,11 +6,5 @@ var map = new mapboxgl.Map({
     zoom: 9 // starting zoom
 });
 map.on('click', function(){
-  var marker = new mapbox.Marker()
-})
-map.on('mousemove', function (e) {
-
-new mapboxgl.Marker(el)
-	.setLngLat(JSON.stringify(e.lngLat))
-	.addTo(map);
+  var marker = new mapbox.Marker().setLatLng([-74.50, 40]).addTo(map);
 });
